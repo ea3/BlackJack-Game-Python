@@ -140,6 +140,29 @@ class Chips:
 			break
 
 
+def player_busts(player, dealer, chips):
+	print('Bust Player!')
+	chips.lose_bet()
+
+def player_wins(player, dealer, chips):
+	print('Player Win!')
+	chips.win_bet()
+
+def dealer_busts(player, dealer, chips):
+	print('Player Wins, Dealer Busted!')
+	chips.win_bet()
+
+def dealer_wins(player, dealer, chips):
+	print('Dealer Wins!!')
+	chips.lose_bet()
+
+def push(player, dealer):
+	print('Dealer and player tie! PUSH')
+
+
+
+
+
 
 
 
