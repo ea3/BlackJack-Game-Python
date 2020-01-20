@@ -99,45 +99,45 @@ class Chips:
 		self.total -= self.bet
 
 
-	def take_bet(chips):
+def take_bet(chips):
 
-		while True:
+	while True:
 
-			try:
-				chips.bet = int(input("How many chips would you like to bet? "))
+		try:
+			chips.bet = int(input("How many chips would you like to bet? "))
 
-			except:
-				print("Sorry, please provide a real amount")
+		except:
+			print("Sorry, please provide a real amount")
 
+		else:
+			if chips.bet > chips.total:
+				print('Sorry, you do not have enough chips! You have: {}'.format(chips.total))
 			else:
-				if chips.bet > chips.total:
-					print('Sorry, you do not have enough chips! You have: {}'.format(chips.total))
-				else:
-					break
+				break
 
-	def hit(deck, hand):
+def hit(deck, hand):
 
-		single_card = deck.deal()
-		hand.add_card(single_card)
-		hand.adjust_for_ace()
+	single_card = deck.deal()
+	hand.add_card(single_card)
+	hand.adjust_for_ace()
 
-	def hit_or_stand(deck, hand):
-		global playing    # to control upocming while loop
+def hit_or_stand(deck, hand):
+	global playing    # to control upocming while loop
 
-		while True:
-			x = input('Hit or Stand? Enter h or s ')
+	while True:
+		x = input('Hit or Stand? Enter h or s ')
 
-			if x[0].lower() == 'h':
-				hit(deck,hand)
+		if x[0].lower() == 'h':
+			hit(deck,hand)
 
-			elif x[0].lower() == 's':
-				print("Player Stands, Dealer's Turn")
-				playing = False
+		elif x[0].lower() == 's':
+			print("Player Stands, Dealer's Turn")
+			playing = False
 
-			else:
-				print("I did not understand that, Please enter h or s only: ")
-				continue
-			break
+		else:
+			print("I did not understand that, Please enter h or s only: ")
+			continue
+		break
 
 
 def player_busts(player, dealer, chips):
@@ -227,13 +227,13 @@ while True:
 
 
 	print('\n Player total chips are at: {}'. format(player_chips.total))
-	new_game = input("Would you like to play again? y/n")
+	new_game = input("Would you like to play again? y/n ")
 
 	if new_game[0].lower() == 'y':
 		playing = True
 		continue
 	else:
-		print('Thank you for playing')
+		print('Thank you for playing ')
 		break
 
 
