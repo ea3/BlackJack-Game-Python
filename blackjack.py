@@ -41,9 +41,43 @@ class Deck:
 		single_card = self.deck.pop()
 		return single_card
 
-test_deck = Deck()
+#test_deck = Deck()
+#test_deck.shuffle()
 
-print(test_deck)
+#print(test_deck)
+
+#print(suits)
+
+
+class Hand:
+	def __init__(self):
+		self.cards = [] 	# Start with an empty list
+		self.value = 0   	# Start with zero value
+		self.aces = 0    # Add a value to keep track of aces
+
+
+	def add_card(self,card):
+
+		self.cards.append(card)
+		self.value += values[card.rank]
+
+
+	def adjust_for_ace(self):
+		pass
+
+test_deck = Deck()
+test_deck.shuffle()
+
+test_player = Hand()
+#Deal one card from the Deck
+pulled_card = test_deck.deal()
+print(pulled_card)
+test_player.add_card(pulled_card)
+print(test_player.value)
+
+
+
+
 
 
 
