@@ -10,8 +10,70 @@ playing = True
 
 class Card:
 
-	def __init__(self):
-		pass
+	def __init__(self, suit, rank):
+		self.suit = suit
+		self.rank = rank
 
 	def __str__(self):
-		pass
+		return self.rank + " of " + self.suit
+
+
+class Deck:
+
+	def __init__(self):
+		self.deck = []
+		for suit in suits:
+			for rank in ranks:
+				self.deck.append(Card(suit,rank))
+
+
+	def __str__(self):
+		deck_composition = ''
+		for card in self.deck:
+			deck_composition += '\n' + card.__str__()
+		return "The Deck has: " + deck_composition
+
+
+	def shuffle(self):
+		random.shuffle(self.deck)
+
+	def deal(self):
+		single_card = self.deck.pop()
+		return single_card
+
+test_deck = Deck()
+
+print(test_deck)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
